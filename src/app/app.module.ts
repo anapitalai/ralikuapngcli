@@ -11,6 +11,7 @@ import { HttpModule } from '@angular/http';
 import { PropertyCreateComponent } from './properties/property-create/property-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PropertySingleComponent } from './properties/property-single/property-single.component';
+import { PropertyUpdateComponent } from './properties/property-update/property-update.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PropertySingleComponent } from './properties/property-single/property-s
     PropertiesComponent,
     PropertiesListComponent,
     PropertyCreateComponent,
-    PropertySingleComponent
+    PropertySingleComponent,
+    PropertyUpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -44,7 +44,7 @@ export class PropertySingleComponent implements OnInit {
   teacherDelete(){
     this.service.teacherDelete(this.teachers._id)
     .subscribe(data=>{
-      this.router.navigate(['/teachers']);
+      this.router.navigate(['/properties']);
     })
   }
 

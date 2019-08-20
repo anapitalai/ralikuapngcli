@@ -1,0 +1,57 @@
+/** import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-property-update',
+  templateUrl: './property-update.component.html',
+  styleUrls: ['./property-update.component.css']
+})
+export class PropertyUpdateComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}**/
+
+
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Http } from '@angular/http';
+import { Property } from '../../shared/models/property';
+import { PropertyService } from '../../shared/services/property.service';
+
+@Component({
+  templateUrl:'./property-update.component.html' 
+})
+export class PropertyUpdateComponent implements OnInit {
+  constructor(private route: ActivatedRoute,private service:PropertyService) {}
+
+  teacher:Property;
+  successMessage:string='';
+  errorMessage:string='';
+  
+  ngOnInit() {
+    let _id=this.route.snapshot.params['id'];
+    this.service.getContact(_id)
+    .subscribe(teacher=>this.teacher=teacher);
+  }
+    
+   updateContact(){
+     this.service.updateContact(this.teacher)
+     .subscribe(teacher=>{
+       this.successMessage='Profile was updated.';
+       console.log('Profile updated');
+     },
+     err=>{
+      this.errorMessage='Contact cant be updated!';
+      console.error(err);
+     }
+    );
+    
+    this.errorMessage='';
+    this.successMessage='';
+
+   }
+
+}

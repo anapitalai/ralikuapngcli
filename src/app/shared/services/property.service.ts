@@ -74,8 +74,8 @@ createTeacher(teacher:Property):Observable<Property>{
 
 teacherDelete(id:number):Observable<any>{
     return this.http.delete(`${this.url}/${id}`)
-    .pipe(tap(res=>this.teacherDeleted())
-    .catchError(this.handleError));
+    .pipe(tap(res=>this.teacherDeleted()),
+    catchError(this.handleError));
 }
 
 //messages
