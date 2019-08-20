@@ -17,8 +17,8 @@ import { map,catchError } from 'rxjs/operators';
 @Injectable()
 
 export class PropertyService{
-    private url:string='http://localhost:3007/teachers';
-   //private url='http://chervicontraining.com:3000/teachers'; 
+    //private url:string='http://localhost:3007/teachers';
+   private url='http://chervicontraining.com:3000/teachers'; 
    //observable source
     private contactDeletedSource=new Subject();
     private contactCreatedSource=new Subject<Property>();
