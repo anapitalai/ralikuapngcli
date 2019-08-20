@@ -12,7 +12,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Property } from '../models/property';
 import { Observable,Subject } from 'rxjs';
-import { map,catchError } from 'rxjs/operators';
+import { map,catchError, tap } from 'rxjs/operators';
 
 @Injectable()
 
@@ -50,32 +50,32 @@ private handleError(err){
     }
  return Observable.throw(errMessage);
 }
-/** 
+
 //get single contact
 getContact(id):Observable<Property>{
  return this.http.get(`${this.url}/${id}`)
- .pipe(map(res=>res.json()))
- .catchError(this.handleError);
+ .pipe(map(res=>res.json()),
+ catchError(this.handleError));
 }
 
 //update user details
 updateContact(teacher:Property):Observable<Property>{
 return this.http.put(`${this.url}/${teacher._id}`,teacher)
-.map(teacher=>teacher.json())
-.catchError(this.handleError)
+.pipe(map(teacher=>teacher.json()),
+catchError(this.handleError))
 }
 
 createTeacher(teacher:Property):Observable<Property>{
     return this.http.post(this.url,teacher)
-    .pipe(map(res=>res.json()))
-    .tap(teacher=>this.teacherCreated(teacher))
-    .catchError(this.handleError);
+    .pipe(map(res=>res.json()),
+    tap(teacher=>this.teacherCreated(teacher)),
+    catchError(this.handleError));
 }
 
 teacherDelete(id:number):Observable<any>{
     return this.http.delete(`${this.url}/${id}`)
-    .do(res=>this.teacherDeleted())
-    .catchError(this.handleError);
+    .pipe(tap(res=>this.teacherDeleted())
+    .catchError(this.handleError));
 }
 
 //messages
@@ -88,5 +88,5 @@ teacherDeleted(){
     this.contactDeletedSource.next();
     console.log('Property has been deleted!');
 }
-**/
+
 }

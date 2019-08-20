@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PropertiesComponent } from './properties/properties.component';
 import { PropertiesListComponent } from './properties/properties-list/properties-list.component';
-import { PropertiesCreateComponent } from './properties/properties-create/properties-create.component';
+import { PropertyCreateComponent } from './properties/property-create/property-create.component';
+import { PropertySingleComponent } from './properties/property-single/property-single.component';
+
 
 const routes: Routes = [
   {
@@ -24,14 +26,14 @@ const routes: Routes = [
     ,
     {
         path:'create',
-        component:PropertiesCreateComponent,
+        component:PropertyCreateComponent,
         //canActivate:[AuthGuard],
-    }
-    /**,
+    },
     {
         path:':id',
-        component:TeachersSingleComponent
-    },
+        component:PropertySingleComponent
+    }
+    /** ,
     {
         path:':id/edit',
         component:TeachersEditComponent

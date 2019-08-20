@@ -1,0 +1,12 @@
+.alink{
+    cursor:pointer;
+  }
+  .img-circle{
+    width:60px;
+    height:60px;
+  }
+
+  .img-parent{
+   display:flex;
+   justify-content:center;
+ }

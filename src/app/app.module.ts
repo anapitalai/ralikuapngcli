@@ -5,19 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PropertiesComponent } from './properties/properties.component';
 import { PropertiesListComponent } from './properties/properties-list/properties-list.component';
-import { PropertiesCreateComponent } from './properties/properties-create/properties-create.component';
+
 import { PropertyService } from './shared/services/property.service';
 import { HttpModule } from '@angular/http';
+import { PropertyCreateComponent } from './properties/property-create/property-create.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PropertySingleComponent } from './properties/property-single/property-single.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PropertiesComponent,
     PropertiesListComponent,
-    PropertiesCreateComponent
+    PropertyCreateComponent,
+    PropertySingleComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AppRoutingModule
   ],
