@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PropertiesComponent } from './properties/properties.component';
 import { PropertiesListComponent } from './properties/properties-list/properties-list.component';
+import { PropertiesCreateComponent } from './properties/properties-create/properties-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PropertiesComponent,
-    PropertiesListComponent
+    PropertiesListComponent,
+    PropertiesCreateComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PropertiesComponent } from './properties/properties.component';
 import { PropertiesListComponent } from './properties/properties-list/properties-list.component';
+import { PropertiesCreateComponent } from './properties/properties-create/properties-create.component';
 
 const routes: Routes = [
   {
@@ -20,12 +21,13 @@ const routes: Routes = [
         path:'',
         component:PropertiesListComponent
     }
-    /**,
+    ,
     {
         path:'create',
-        component:TeachersCreateComponent,
+        component:PropertiesCreateComponent,
         //canActivate:[AuthGuard],
-    },
+    }
+    /**,
     {
         path:':id',
         component:TeachersSingleComponent

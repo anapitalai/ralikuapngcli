@@ -11,5 +11,6 @@ export class PropertiesComponent implements OnInit {
 
   ngOnInit() {
   }
+  
 
 }

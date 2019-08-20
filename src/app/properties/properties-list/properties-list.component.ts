@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PropertyService } from 'src/app/shared/services/property.service';
+import { Property } from 'src/app/shared/models/property';
 
 @Component({
   selector: 'app-properties-list',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./properties-list.component.css']
 })
 export class PropertiesListComponent implements OnInit {
+  
+  constructor(private service: PropertyService) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  teachers:Property[];
+  ngOnInit(): void {
+    this.service.getContacts()
+    .subscribe(teachers=>this.teachers=teachers);
   }
-
+    
+  
 }
