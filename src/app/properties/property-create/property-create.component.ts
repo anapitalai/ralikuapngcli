@@ -45,29 +45,29 @@ export class PropertyCreateComponent implements OnInit {
     this.filesToUpload = <Array<File>>event.target.files;
   }
 
-  
 
-    
+
+
 
   createTeacher() {
     this.successMessage = '';
     this.errorMessage = '';
     console.log(this.form);
     console.log(this.form.value);
-    
+
     const files: Array<File> = this.filesToUpload;
     const fd = new FormData();
 
-    for(let i =0; i < files.length; i++){
+    for (let i = 0; i < files.length; i++) {
       fd.append("avatarImage", files[i], files[i]['name']);
-      fd.append('name', this.form.value.name);
-      fd.append('description', this.form.value.description);
-  }
+    }
+    fd.append('name', this.form.value.name);
+    fd.append('description', this.form.value.description);
 
 
     this.http.post('http://localhost:3007/teachers', fd)
-    //this.http.post('http://chervicontraining.com:3000/teachers',fd)  
-    .subscribe(res => {
+      //this.http.post('http://chervicontraining.com:3000/teachers',fd)  
+      .subscribe(res => {
         console.log(res);
       })
   }
