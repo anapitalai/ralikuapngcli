@@ -65,8 +65,8 @@ export class PropertyCreateComponent implements OnInit {
     fd.append('description', this.form.value.description);
 
 
-    //this.http.post('http://localhost:3007/teachers', fd)
-      this.http.post('http://chervicontraining.com:3000/teachers',fd)  
+      this.http.post('http://localhost:3007/teachers', fd)
+      //this.http.post('http://chervicontraining.com:3000/teachers',fd)  
       .subscribe(res => {
         console.log(res);
       })

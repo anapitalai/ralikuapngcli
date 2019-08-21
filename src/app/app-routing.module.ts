@@ -5,6 +5,12 @@ import { PropertiesListComponent } from './properties/properties-list/properties
 import { PropertyCreateComponent } from './properties/property-create/property-create.component';
 import { PropertySingleComponent } from './properties/property-single/property-single.component';
 import { PropertyUpdateComponent } from './properties/property-update/property-update.component';
+import { AuthComponent } from './auth/auth.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardListComponent } from './dashboard/dashboard-list/dashboard-list.component';
+import { DashboardCreateComponent } from './dashboard/dashboard-create/dashboard-create.component';
+import { DashboardSingleComponent } from './dashboard/dashboard-single/dashboard-single.component';
+import { DashboardEditComponent } from './dashboard/dashboard-edit/dashboard-edit.component';
 
 
 const routes: Routes = [
@@ -13,7 +19,10 @@ const routes: Routes = [
     redirectTo:'',
     pathMatch: 'full'
 },
-
+{
+    path:'login',
+    component:AuthComponent,
+},
 
 {
     path:'properties',
@@ -39,6 +48,31 @@ const routes: Routes = [
         path:':id/edit',
         component:PropertyUpdateComponent
     }
+
+    ]   
+},
+{
+    path:'dashboard',
+    //canActivate:[AuthGuard],
+    component:DashboardComponent,
+    children:[{
+        path:'',
+        component:DashboardListComponent
+    },
+    {
+        path:'create',
+        component:DashboardCreateComponent
+    }
+    ,
+    {
+        path:':id',
+        component:DashboardSingleComponent
+    },
+    {
+        path:':id/edit',
+        component:DashboardEditComponent
+    }
+
 
     ]
 
