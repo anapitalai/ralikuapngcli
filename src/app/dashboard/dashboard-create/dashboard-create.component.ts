@@ -5,12 +5,6 @@ import { User } from '../../shared/models/user';
 import { DashboardService } from '../../shared/services/dashboard.service';
 @Component({
   styles:[`
-  input.ng-valid.ng-touched{
-    border-left:5px solid green;
-  }
-  input.ng-invalid.ng-touched{
-    border-left:5px solid red;
-  }
 
  `],
   templateUrl:'./dashboard-create.component.html' 

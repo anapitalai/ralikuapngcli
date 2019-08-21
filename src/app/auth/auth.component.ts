@@ -1,20 +1,3 @@
-/** import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-auth',
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css']
-})
-export class AuthComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}**/
-
-
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http } from '@angular/http';
@@ -39,7 +22,7 @@ export class AuthComponent implements OnInit {
     this.errorMessage='';
       this.authService.login(this.credentials.email,this.credentials.password)
       .subscribe(data=>{
-        this.router.navigate(['/']);
+        this.router.navigate(['/properties']);
         console.log(data);
       },
       err=>{

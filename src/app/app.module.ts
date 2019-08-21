@@ -9,7 +9,7 @@ import { PropertiesListComponent } from './properties/properties-list/properties
 import { PropertyService } from './shared/services/property.service';
 import { DashboardService } from './shared/services/dashboard.service';
 import { StationeryService } from './shared/services/stationery.service';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http, RequestOptions } from '@angular/http';
 import { PropertyCreateComponent } from './properties/property-create/property-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PropertySingleComponent } from './properties/property-single/property-single.component';
@@ -21,6 +21,21 @@ import { DashboardCreateComponent } from './dashboard/dashboard-create/dashboard
 import { DashboardEditComponent } from './dashboard/dashboard-edit/dashboard-edit.component';
 import { DashboardSingleComponent } from './dashboard/dashboard-single/dashboard-single.component';
 import { DashboardListComponent } from './dashboard/dashboard-list/dashboard-list.component';
+import { AuthGuard } from './shared/guards/auth-guard.service';
+import { AuthHttp,AuthConfig } from 'angular2-jwt';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/observable/throw';
+export function authHttpFactory(http:Http,options:RequestOptions){
+  return new AuthHttp(new AuthConfig({
+    tokenGetter:(()=>localStorage.getItem('access_token')),
+    noJwtError:true
+  }),http,options);
+}
+
+
 
 @NgModule({
   declarations: [
@@ -46,9 +61,15 @@ import { DashboardListComponent } from './dashboard/dashboard-list/dashboard-lis
   ],
   providers: [
     PropertyService,
+    {
+      provide:AuthHttp,
+      useFactory:authHttpFactory,
+      deps:[Http,RequestOptions]
+    },
     StationeryService,
     DashboardService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
