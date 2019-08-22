@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit,NgModule } from '@angular/core';
 import { Http,Response } from '@angular/http';
 import {AuthHttp,JwtHelper} from 'angular2-jwt';
-import { PropertyService } from '../../shared/services/property.service';
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -10,8 +8,8 @@ import { catchError, map, tap } from 'rxjs/operators';
   
 })
 export class AuthService {
-    private authUrl='http://localhost:3007/users/login';
-   // private authUrl='http://chervicontraining.com:3000/users/login';
+    //private authUrl='http://localhost:3007/users/login';
+   private authUrl='http://chervicontraining.com:3000/users/login';
     private loggedIn: boolean=false;
      private token = localStorage.getItem('token');
 

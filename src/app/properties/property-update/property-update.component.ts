@@ -1,23 +1,5 @@
-/** import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-property-update',
-  templateUrl: './property-update.component.html',
-  styleUrls: ['./property-update.component.css']
-})
-export class PropertyUpdateComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}**/
-
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Http } from '@angular/http';
 import { Property } from '../../shared/models/property';
 import { PropertyService } from '../../shared/services/property.service';
 
