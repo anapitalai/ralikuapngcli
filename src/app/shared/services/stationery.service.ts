@@ -10,7 +10,7 @@ import { catchError, tap, map } from 'rxjs/operators';
 
 export class StationeryService{
     //private url:string='http://localhost:3007/professionals';
-    private url='http://chervicontraining.com:3000/professionals';
+    private url='https://apis.raliku.com/professionals';
     //observable source
     private deletedProfessionalSource=new Subject();
     private createdProfessionalSource=new Subject<Stationery>();

@@ -10,7 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 export class DashboardService{
     //private url:string='http://localhost:3007/users';
-    private url='http://chervicontraining.com:3000/users';
+    private url='https://apis.raliku.com.com/users';
     //observable source
     private userDeletedSource=new Subject();
     private userCreatedSource=new Subject<User>();

@@ -9,7 +9,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class AuthService {
     //private authUrl='http://localhost:3007/users/login';
-   private authUrl='http://chervicontraining.com:3000/users/login';
+   private authUrl='https://apis.raliku.com/users/login';
     private loggedIn: boolean=false;
      private token = localStorage.getItem('token');
 
