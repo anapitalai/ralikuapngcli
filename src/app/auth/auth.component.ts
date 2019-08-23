@@ -3,12 +3,12 @@ import { Router } from '@angular/router';
 import { Http } from '@angular/http';
 import { Property } from '../shared/models/property';
 import { PropertyService } from '../shared/services/property.service';
-import { AuthService } from '../shared/services/auth.service';
+import { AuthSlyService } from '../shared/services/authsly.service';
 @Component({
   templateUrl:'./auth.component.html' 
 })
 export class AuthComponent implements OnInit {
-  constructor(private authService:AuthService,private router:Router ) {}
+  constructor(private authService:AuthSlyService,private router:Router ) {}
 
   credentials={email:'',password:''};
   errorMessage:string='';

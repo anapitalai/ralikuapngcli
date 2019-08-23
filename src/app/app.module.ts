@@ -13,14 +13,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PropertySingleComponent } from './properties/property-single/property-single.component';
 import { PropertyUpdateComponent } from './properties/property-update/property-update.component';
 import { AuthComponent } from './auth/auth.component';
-import { AuthService } from './shared/services/auth.service';
+import { AuthSlyService } from './shared/services/authsly.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardCreateComponent } from './dashboard/dashboard-create/dashboard-create.component';
 import { DashboardEditComponent } from './dashboard/dashboard-edit/dashboard-edit.component';
 import { DashboardSingleComponent } from './dashboard/dashboard-single/dashboard-single.component';
 import { DashboardListComponent } from './dashboard/dashboard-list/dashboard-list.component';
-import { AuthGuard } from './shared/guards/auth-guard.service';
-import { AuthHttp,AuthConfig } from 'angular2-jwt';
+import { AuthGuard } from './shared/guards/guards.service';
+import { AuthHttp,AuthConfig, AuthModule } from 'angular2-jwt';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
@@ -61,7 +61,8 @@ export function authHttpFactory(http:Http,options:RequestOptions){
   ],
   providers: [
     PropertyService,
-    AuthService,
+    AuthGuard,
+    AuthSlyService,
     {
       provide:AuthHttp,
       useFactory:authHttpFactory,
@@ -69,7 +70,6 @@ export function authHttpFactory(http:Http,options:RequestOptions){
     },
     StationeryService,
     DashboardService,
-    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

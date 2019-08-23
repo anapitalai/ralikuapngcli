@@ -1,13 +1,12 @@
-import { Component, OnInit,NgModule } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { Http,Response } from '@angular/http';
 import {AuthHttp,JwtHelper} from 'angular2-jwt';
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-@Component({
-  
-})
-export class AuthService {
+@Injectable()
+
+export class AuthSlyService {
     //private authUrl='http://localhost:3007/users/login';
    private authUrl='https://apis.raliku.com/users/login';
     private loggedIn: boolean=false;

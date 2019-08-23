@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { CanActivate,CanActivateChild,Router } from '@angular/router';
-import { AuthService } from 'src/app/shared/services/auth.service';
+import { AuthSlyService } from '../services/authsly.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate,CanActivateChild{
-   constructor(private router:Router,public authService:AuthService){}
+   constructor(private router:Router,public authService:AuthSlyService){}
 
     canActivate():boolean {
         console.log('check is in progress');

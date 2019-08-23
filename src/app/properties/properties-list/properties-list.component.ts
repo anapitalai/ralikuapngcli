@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PropertyService } from 'src/app/shared/services/property.service';
 import { Property } from 'src/app/shared/models/property';
-import { AuthService } from 'src/app/shared/services/auth.service';
+import { AuthSlyService } from 'src/app/shared/services/authsly.service';
 
 @Component({
   selector: 'app-properties-list',
@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class PropertiesListComponent implements OnInit {
   
-  constructor(private service: PropertyService,private auth:AuthService) {}
+  constructor(private service: PropertyService,private auth:AuthSlyService) {}
 
   teachers:Property[];
   ngOnInit(): void {

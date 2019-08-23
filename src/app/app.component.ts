@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 import { Property } from './shared/models/property';
 import { User } from './shared/models/user';
 import { PropertyService } from './shared/services/property.service';
-import { AuthService } from './shared/services/auth.service';
+import { AuthSlyService } from './shared/services/authsly.service';
 import { DashboardService } from './shared/services/dashboard.service';
 @Component({
   selector: 'app-root',
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   teachers: Property[];
   users: User[];
 
-  constructor(private service: PropertyService, private authService: AuthService, private dashboardService: DashboardService
+  constructor(private service: PropertyService, private authService: AuthSlyService, private dashboardService: DashboardService
     , private router: Router) { }
 
   ngOnInit(): void {
