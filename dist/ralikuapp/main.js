@@ -917,7 +917,7 @@ var PropertyCreateComponent = /** @class */ (function () {
         fd.append('name', this.form.value.name);
         fd.append('description', this.form.value.description);
         //this.http.post('http://localhost:3007/teachers', fd)
-        this.http.post('http://chervicontraining.com:3000/teachers', fd)
+        this.http.post('https://apis.raliku.com/teachers', fd)
             .subscribe(function (res) {
             console.log(res);
         });
@@ -1148,7 +1148,7 @@ var AuthService = /** @class */ (function () {
     function AuthService(authHttp) {
         this.authHttp = authHttp;
         //private authUrl='http://localhost:3007/users/login';
-        this.authUrl = 'http://chervicontraining.com:3000/users/login';
+        this.authUrl = 'https://apis.raliku.com/users/login';
         this.loggedIn = false;
         this.token = localStorage.getItem('token');
         //testing
@@ -1233,7 +1233,7 @@ var DashboardService = /** @class */ (function () {
     function DashboardService(http) {
         this.http = http;
         //private url:string='http://localhost:3007/users';
-        this.url = 'http://chervicontraining.com:3000/users';
+        this.url = 'https://apis.raliku.com.com/users';
         //observable source
         this.userDeletedSource = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
         this.userCreatedSource = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
@@ -1341,7 +1341,7 @@ var PropertyService = /** @class */ (function () {
     function PropertyService(http) {
         this.http = http;
         //private url:string='http://localhost:3007/teachers';
-        this.url = 'http://chervicontraining.com:3000/teachers';
+        this.url = 'https://apis.raliku.com/teachers';
         //observable source
         this.contactDeletedSource = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.contactCreatedSource = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
@@ -1433,7 +1433,7 @@ var StationeryService = /** @class */ (function () {
     function StationeryService(http) {
         this.http = http;
         //private url:string='http://localhost:3007/professionals';
-        this.url = 'http://chervicontraining.com:3000/professionals';
+        this.url = 'https://apis.raliku.com/professionals';
         //observable source
         this.deletedProfessionalSource = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
         this.createdProfessionalSource = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subject"]();
