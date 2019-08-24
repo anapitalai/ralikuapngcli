@@ -13,13 +13,15 @@ import { Http, Response } from '@angular/http';
 import { Property } from '../models/property';
 import { Observable,Subject } from 'rxjs';
 import { map,catchError, tap } from 'rxjs/operators';
+import config from '../../../config/keys';
 
 @Injectable()
 
 export class PropertyService{
     //private url:string='http://localhost:3007/teachers';
    
-   private url='https://apis.raliku.com/teachers'; 
+   //private url='https://apis.raliku.com/teachers'; 
+   private url=`${config.endPoint}/teachers`;
    //observable source
     private contactDeletedSource=new Subject();
     private contactCreatedSource=new Subject<Property>();

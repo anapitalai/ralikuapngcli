@@ -6,6 +6,8 @@ import { Http } from '@angular/http';
 import { Property } from '../../shared/models/property';
 import { PropertyService } from '../../shared/services/property.service';
 
+import config from '../../../config/keys';
+
 
 @Component({
   styles: [`
@@ -66,7 +68,7 @@ export class PropertyCreateComponent implements OnInit {
 
 
       //this.http.post('http://localhost:3007/teachers', fd)
-      this.http.post('https://apis.raliku.com/teachers',fd)  
+      this.http.post(`${config.endPoint}/teachers`,fd)  
       .subscribe(res => {
         console.log(res);
       })

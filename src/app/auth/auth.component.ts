@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Http } from '@angular/http';
-import { Property } from '../shared/models/property';
-import { PropertyService } from '../shared/services/property.service';
 import { AuthSlyService } from '../shared/services/authsly.service';
 @Component({
   templateUrl:'./auth.component.html' 

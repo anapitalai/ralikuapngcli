@@ -5,12 +5,14 @@ import { Stationery } from '../models/stationery';
 import 'rxjs/add/operator/map';
 import { Observable,Subject } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
+import config from '../../../config/keys';
 
 @Injectable()
 
 export class StationeryService{
     //private url:string='http://localhost:3007/professionals';
-    private url='https://apis.raliku.com/professionals';
+    //private url='https://apis.raliku.com/professionals';
+    private url=`${config.endPoint}/professionals`;
     //observable source
     private deletedProfessionalSource=new Subject();
     private createdProfessionalSource=new Subject<Stationery>();
