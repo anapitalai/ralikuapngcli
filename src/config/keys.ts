@@ -1,3 +1,3 @@
 export default{
-    endPoint:"http://localhost:3007",
+    endPoint:"http://localhost:3000",
 };

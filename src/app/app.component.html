@@ -16,7 +16,7 @@
         <ul class='nav navbar-nav navbar-right'>
           <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
           <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
-          <li *ngIf="isLoggedIn"><a><img src='app/images/ej.jpg' alt="profile image"
+          <li *ngIf="isLoggedIn"><a><img src='/src/assets/images/ej.png' alt="profile image"
                 class="profile img-circle img-responsive"></a></li>
         </ul>
       </div>
