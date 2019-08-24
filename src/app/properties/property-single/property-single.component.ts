@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute , Router} from '@angular/router';
-import { Http } from '@angular/http';
 import { Property } from '../../shared/models/property';
 import { PropertyService } from '../../shared/services/property.service';
+import { AuthSlyService } from 'src/app/shared/services/authsly.service';
 
 @Component({
-  styles:[
-
-  ],
+  styleUrls: ['./property-single.component.css'],
   templateUrl:'./property-single.component.html' 
 })
 export class PropertySingleComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router:Router,
+              private auth:AuthSlyService,
               private service:PropertyService) {}
           
 

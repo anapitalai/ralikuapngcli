@@ -3,6 +3,7 @@ import { ActivatedRoute , Router} from '@angular/router';
 import { Http } from '@angular/http';
 import { User } from '../../shared/models/user';
 import { DashboardService } from '../../shared/services/dashboard.service';
+import { AuthSlyService } from 'src/app/shared/services/authsly.service';
 
 @Component({
   templateUrl:'./dashboard-single.component.html' 
@@ -10,6 +11,7 @@ import { DashboardService } from '../../shared/services/dashboard.service';
 export class DashboardSingleComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router:Router,
+              private auth:AuthSlyService,
               private service:DashboardService) {}
 
   user:User;

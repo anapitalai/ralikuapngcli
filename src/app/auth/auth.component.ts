@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthSlyService } from '../shared/services/authsly.service';
 @Component({
-  templateUrl:'./auth.component.html' 
+  templateUrl:'./auth.component.html',
+  styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
   constructor(private authService:AuthSlyService,private router:Router ) {}

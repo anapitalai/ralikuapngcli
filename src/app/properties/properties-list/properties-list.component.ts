@@ -10,7 +10,7 @@ import { AuthSlyService } from 'src/app/shared/services/authsly.service';
 })
 export class PropertiesListComponent implements OnInit {
   
-  constructor(private service: PropertyService,private auth:AuthSlyService) {}
+  constructor(private service: PropertyService,public auth:AuthSlyService) {}
 
   teachers:Property[];
   ngOnInit(): void {

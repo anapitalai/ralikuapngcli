@@ -7,7 +7,7 @@
       
       </div>
       
-      <button [routerLink]="['/dashboard',user._id,'edit']" class="btn btn-primary btn-bg">Edit Profile</button>
-      <button (click)="deleteUser()" class="btn btn-danger btn-bg">Delete User</button>
+      <button  *ngIf='!!auth.isLoggedIn()' [routerLink]="['/dashboard',user._id,'edit']" class="btn btn-primary btn-bg">Edit Profile</button>
+      <button  *ngIf='auth.isLoggedIn()' (click)="deleteUser()" class="btn btn-danger btn-bg">Delete User</button>
   </div>  
 </div>

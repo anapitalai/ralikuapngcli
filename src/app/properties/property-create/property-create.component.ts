@@ -42,13 +42,9 @@ export class PropertyCreateComponent implements OnInit {
   }
 
 
-
   onFileSelected(event) {
     this.filesToUpload = <Array<File>>event.target.files;
   }
-
-
-
 
 
   createTeacher() {

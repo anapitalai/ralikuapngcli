@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
 import { User } from '../../shared/models/user';
 import { DashboardService } from '../../shared/services/dashboard.service';
+import { AuthSlyService } from 'src/app/shared/services/authsly.service';
 @Component({
   styles:[`
    .user-card{cursor:pointer;
@@ -28,6 +28,6 @@ export class DashboardListComponent implements OnInit {
     .subscribe(users=>this.users=users);
   }
     
-  constructor(private service: DashboardService) {}
+  constructor(private service: DashboardService,public auth:AuthSlyService) {}
 
 }

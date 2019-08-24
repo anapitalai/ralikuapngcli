@@ -55,7 +55,8 @@ const routes: Routes = [
     path:'dashboard',
     //canActivate:[AuthGuard],
     component:DashboardComponent,
-    children:[{
+    children:[
+        {
         path:'',
         component:DashboardListComponent
     },
