@@ -2,7 +2,7 @@
   <h2>REALESTATE/STATIONERY APP</h2>
   <small>Let the app get your accomodation in Lae.</small><br>
   <button *ngIf='auth.isLoggedIn()' routerLink='/properties/create' class="btn btn-info">New Property Listing</button>
-  <button routerLink='/professionals' class="btn btn-danger">More Stationery</button>
+  <button routerLink='/login' class="btn btn-primary">More Stationery</button>
 </div>
 
 <div *ngIf="teachers">
@@ -12,9 +12,9 @@
       <h4>{{c.createdAt}}</h4>
       <img [src]='c.listViewImage' class='img-responsive img-circle'>
 
-      <!--<div class="btn btn-info pull-right">Interested!Leave a Message</div>
-      <div class="btn btn-primary pull-right">More Details</div>-->
+      <div class="btn btn-danger pull-left">Rental Status</div>
+    
     </div>
-     <div class="btn btn-primary pull-right">Interested!Leave a Message</div>
+     <div class="btn btn-primary pull-right">Interested!Email Us</div>
   </div>
 </div>

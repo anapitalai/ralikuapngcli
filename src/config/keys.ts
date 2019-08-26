@@ -1,3 +1,3 @@
 export default{
-    endPoint:"https://apis.raliku.com",
+    endPoint:'apis.raliku.com',
 };
